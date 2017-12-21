@@ -1,0 +1,57 @@
+<!-- <html lang="pt">
+  <head>
+    <title>Cadastro de Produto</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  </head>
+<header>
+    <nav class="navbar navbar-light " style="background-color: #00004d;">
+        <div class="container">
+          <span class="navbar-brand mb-0 h1 " style="color: white;" >Administrador</span>
+        </div>
+    </nav>
+  </header>
+<hr />
+<div class="container">
+
+    <div>
+        <h1 class="text-center">Cadastro de Produto</h1>
+        <hr />
+    </div>
+
+    <form *ngIf="!sucesso" (ngSubmit)="enviar()">
+        <div class="form-group">
+          <label class="control-label" for="id">Identificador</label>
+          <input type="text" class="form-control" name="id"
+            id="id" [(ngModel)]="produto.id">
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="nome">Nome</label>
+          <input type="text" class="form-control" name="nome" 
+            id="nome" [(ngModel)]="produto.nome">
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="preco">Preço</label>
+          <input type="text" class="form-control" name="preco" 
+            id="preco" [(ngModel)]="produto.preco">
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="categoria">Categoria</label>
+          <select name="categoria" id="categoria" class="form-control"
+            [(ngModel)]="produto.categoria">
+            <option value="">Selecione</option>
+            <option *ngFor="#" [value]="categoria.id">
+              {{categoria.nome}}
+            </option>
+          </select>
+        </div>
+        <hr />
+        <div class="form-group text-center">
+          <button type="submit" class="btn btn-primary">Cadastrar!</button>
+        </div>
+      </form>
+  </div>
+  </div> -->

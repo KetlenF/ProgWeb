@@ -1,0 +1,50 @@
+
+<div class="container">
+
+  <div>
+    <h1 class="text-center">Lista de Produto</h1>
+    <hr />
+  </div>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Preço</th>
+        <th scope="col">Categoria</th>
+        <th scope="col">Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let produto of produtos; let i = index;">
+        <th>{{ produto.id }}</th>
+        <td>{{ produto.nome }}</td>
+        <td>{{ produto.preco }}</td>
+        <td>{{ produto.categoria.nome }}</td>
+        <th>
+          <button>
+            <i class="" aria-hidden="true" [routerLink]="['/admin/produto/visualizar', produto.id]">Visualizar</i>
+          </button>
+          <button>
+            <i class="" aria-hidden="true">Editar</i>
+          </button>
+          <button (click)="openModal(template, produto, i)">
+            <i class="" aria-hidden="true" ></i>Excluir
+          </button>
+          <button (click)="adicionarProduto(produto)">Teste</button>
+      </tr>
+    </tbody>
+  </table>
+  
+  <br>
+  <pre>{{message}}</pre>
+  <ng-template #template>
+    <div class="modal-body text-center">
+      <p>Tem certeza que deseja apagar o Produto {{selectProduto.nome}}? </p>
+      <button type="button" class="btn btn-default" (click)="delete(selectProduto.id, i)" >Sim</button>
+      <button type="button" class="btn btn-primary" (click)="decline()" >Não</button>
+    </div>
+  </ng-template>
+  
+</div>

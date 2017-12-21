@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e8eaf6;">
+  <div class="container">
+    <div class="col-4">
+      <a class="navbar-brand" routerLink="/admin">Administrador</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link active" routerLink="/admin/categoria/listar">Categoria</a>
+          <a class="nav-item nav-link active" routerLink="/admin/produto/listar">Produto</a>
+        </div>
+      </div>
+    </div>
+    <div class="offset-md-4 col col-lg-2">
+      <div class="row">
+        <div class="pull-right" id="carrinho">
+          <div class="col-4">
+            <img src="../assets/cart.png">
+          </div>
+          <div class="col-8">
+        
+          <h3><a routerLink="carrinho/listar-carrinho">Meu Carrinho</a></h3>
+        
+          <span>Carrinho Vazio</span>
+        <span>X Produtos</span>
+
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+  </nav>
+  <router-outlet></router-outlet>
+  
+  

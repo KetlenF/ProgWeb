@@ -1,0 +1,45 @@
+<div class="container">
+
+<div>
+  <h1 class="text-center">Lista de Categoria</h1>
+  <hr />
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Categoria</th>
+      <th scope="col">Ação</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let categoria of categorias; let i = index;">
+      <th scope="row">{{ categoria.id }}</th>
+      <td>{{ categoria.nome }}</td>
+      <td>
+        <button>
+          <i class="" aria-hidden="true" [routerLink]="['/admin/categoria/visualizar', categoria.id]">Visualizar</i>
+        </button>
+        <button>
+          <i class="" aria-hidden="true">Editar</i>
+        </button>
+        <button (click)="openModal(template, categoria, i)">
+          <i class="" aria-hidden="true" ></i>Excluir
+        </button>
+    </tr>
+  </tbody>
+  
+</table>
+
+<!-- <button type="button" class="btn btn-primary" (click)="openModal(template)">Open modal</button> -->
+<br><br>
+<pre>{{message}}</pre>
+<ng-template #template>
+  <div class="modal-body text-center">
+    <p>Tem certeza que deseja apagar a Categoria {{selectCategoria.nome}}? </p>
+    <button type="button" class="btn btn-default" (click)="delete(selectCategoria.id, selectIndex)" >Sim</button>
+    <button type="button" class="btn btn-primary" (click)="decline()" >Não</button>
+  </div>
+</ng-template>
+</div>
